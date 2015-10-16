@@ -20,7 +20,7 @@ My client is an independent gym owner who is struggling to keep track of his mem
 
 \subsection{Define the current system}
 
-His current system involves using a series of excel spreadsheets to document his clients payment, membership details, personal details and exercise plans. He does this manually by creating new spreadsheets and entering the clients data by hand. His clients give him this data by filling out a membership form and membership agreement and via discussion and interview if they need an exercise program made for them. My client uses one spreadsheet to keep a record of all the members of the gym including details like their member ID, their contact information, payment information and their membership details as well as whether their up to date with payments. Each member then has their own spreadsheet which is used to keep track of any exercise routines they may have paid to have planned for them.
+His current system involves using a series of excel spreadsheets to document his clients payment, membership details, personal details and exercise plans. He does this manually by creating new spreadsheets and entering the clients data by hand. His clients give him this data by filling out a membership form and membership agreement and via discussion and another entry form if they need an exercise program made for them. My client uses one spreadsheet to keep a record of all the members of the gym including details like their member ID, their contact information and membership details, and another for their payment information  as well as whether their up to date with these payments. Each member then has their own table which is used to keep track of any exercise routines they may have paid to have planned for them.
 
 \subsection{Describe the problems}
 
@@ -34,7 +34,7 @@ Our current system involves entering data regarding our clients into excel sprea
 
 Q. And what data is it that you record?
 
-We use the first spreadsheet to record our clients names, contact information, payment details, and what membership they have. Each member then has their own spreadsheet for us to detail any exercise plans that they request for us to create. 
+We use the first spreadsheet to record our clients names, contact information, and what membership they have, as well as another for payment details. Each member then has their own table for us to detail any exercise plans that they request for us to create. 
 
 Q. What are the limitations of this?
 This system means that everything has to be done manually and I won't know if Iv'e forgotten to enter whether someones paid or not as their is no way for me to know if I forgot to change part of the spreadsheet or if my client is trying not to pay. It also isn't very secure as anyone could edit it easily. The process can also be very time consuming.
@@ -87,7 +87,7 @@ Gym Sign Up Process
 	1.1 My client gives a form to their client to be promptly filled out
 	1.2 The client then hands the sheet back into reception 
 	1.3 The information provided on this sheets then enter manually into an excel spreadsheet
-	1.4 Do they have an exercise plan? Then the plan is created based on an interview with the client
+	1.4 Do they have an exercise plan? Then the plan is created based on an interview  with the client while they fill out a form
 2.Create Membership Card
 	2.1 Make sure all necessary details are correct
 	2.2 print Membership card 
@@ -121,7 +121,7 @@ Function GetInfo:
 	Hands form into gym owner
 	Owner enters the information into an excel spreadsheet
 	IF they have an exercise plan:
-		Owner creates a plan based on an interview with client and enters this into it’s
+		Owner creates a plan based on an interview with client and new form and enters this into it’s
 own spreadsheet
 	Owner creates Membership Card
 	Owner checks to make sure all the info is correct
@@ -240,12 +240,12 @@ My proposed system uses a database to keep track of all the data that my client 
 \subsubsection{Data sources and destinations}
 
 \begin{figure}[H]
-    \includegraphics[width=\textwidth]{ProposedSources.jpg}
+    \includegraphics[width=\textwidth]{Data Sources and Definitions - Proposed 2.jpg}
     \caption{Data Sources and Destinations} \label{fig: Data Sources and Destinations }
 \end{figure}
 
 \begin{figure}[H]
-    \includegraphics[width=\textwidth]{ProposedSources2.jpg}
+    \includegraphics[width=\textwidth]{Data Sources and Definitions - Proposed.jpg}
     \caption{Data Sources and Destinations 2} \label{fig: Data Sources and Destinations 2 }
 \end{figure}
 
@@ -259,12 +259,12 @@ My proposed system uses a database to keep track of all the data that my client 
 \subsubsection{Data dictionary}
 
 \begin{figure}[H]
-    \includegraphics[width=\textwidth]{Sources.jpg}
+    \includegraphics[width=\textwidth]{Data Dictionary - Proposed.jpg}
     \caption{Data Destinations and Sources} \label{fig: Data Destinations and Sources }
 \end{figure}
 
 \begin{figure}[H]
-    \includegraphics[width=\textwidth]{Sources2.jpg}
+    \includegraphics[width=\textwidth]{Data Dictionary - Proposed 2.jpg}
     \caption{Data Destinations and Sources 2} \label{fig: Data Destinations and Sources 2 }
 \end{figure}
 
@@ -348,22 +348,29 @@ Input Forms
 \subsection{ER Diagram}
 
 \begin{figure}[H]
-    \includegraphics[width=\textwidth]{ER Diagram.jpg}
+    \includegraphics[width=\textwidth]{-ER Diagram.jpg}
     \caption{ER Diagram} \label{fig: ER Diagram}
 \end{figure}
 
 
 \subsection{Entity Descriptions}
 
-Membership Details(\textbf{\underline{Membership No.}}, Last Name, First Name, Address, Telephone No., Type Of Membership, Date of Induction, When Joined, Comments)
+Membership Details(\textbf{\underline{Membership No.}}, Last Name, First Name, Address, Telephone No., Type Of Membership, Date of Induction, When Joined, How Paid,amount, registration fee, Registration Date, Payment Type, Comments)
 
-Payment Deatils(\textbf{\underline{Membership No.}}, How Paid, Amount, Registration Fee, Registration Date, Payment Type, Monthly Pay)
+Payment Details(\textbf{\underline{Membership No.}},Date of Payment, How Much, Paid)
 
-Workout Programme(\textbf{\underline{Membership No.}}, Excercise, Weight, Set Reps)
+Regime(\textbf{\underline{Membership No.}},ExerciseID,)
+
+Exercise(\textbf{\underline{ExerciseID}}, Name, Description)
 
 \section{Object Analysis}
 
 \subsection{Object Listing}
+
+Membership Details
+Payment Details
+Regime
+Exercise
 
 \subsection{Relationship diagrams}
 
@@ -514,6 +521,6 @@ My Chosen solution is too use an application with a GUI programmed in python wit
     \item I am familiar with python and PyQt and know how to use them as well as knowing how to use and disect their documentation if I ever get lost
     \item Python is easy to install and I can easily guide my client and hs staff in open the application
     \item If its more accessable to the client I can even make an executable of the program using a program like cx freeze
-    \item Programming in python gives me the opportunity to present and demontrate my knowledge of complex programing features like Object Oriented Programming and recursive programming
+    \item Programming in python gives me the opportunity to present and demonstrate my knowledge of complex programming features like Object Oriented Programming and recursive programming
     \item Python gives me he flexibility to program the system to my clients exact specification as its a fully featured programming language
 \end{itemize}
