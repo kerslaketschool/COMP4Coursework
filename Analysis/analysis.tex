@@ -491,7 +491,7 @@ Paper Based Manual System
 	\end{itemize}
 \end{itemize}
 
-Command Line Application Programmed in Python
+Command Line Application Programmed in Python implementing a database saved to text or binary files
 
 \begin{itemize}
 	\item Advantages
@@ -499,15 +499,38 @@ Command Line Application Programmed in Python
 		\item Relatively easy to program with a short development time
 		\item Easy to use if users are taught appropriately
 		\item Can be programmed to do anything required and easily modified in the future
+		\item Saving the databases to one of these formats is relatively easy to programm and manage.
+	\end{itemize}
+	\item Disadvantages
+	\begin{itemize}
+		\item Commandline can be difficult for some people to understand 
+		\item Executing the program may be difficult for some users
+		\item Using text files and binary files is very insecure as they can be easily edited, manipulated and read by anyone with moderate I.T knowledge.
+		\item Using these formats means that all sorting methods and search methods have to be programmed be me instead of using a function from a library like sqlite3 resulting in a considerable use of time and resources that isn't necessary.
+	\end{itemize}
+\end{itemize}
+
+Command Line Application Programmed in Python implementing a database programmed and managed in SQL
+
+\begin{itemize}
+	\item Advantages
+	\begin{itemize}
+		\item Relatively easy to program with a short development time
+		\item Easy to use if users are taught appropriately
+		\item Can be programmed to do anything required and easily modified in the future
+		\item Uses relational databases that will be easily understandable as it will be designed to my clients specifications when compared to the previous excel spreadsheets as well as being more secure than a text or binary file as well as being easier to manipulate with the sqlite3 library.
+		\item With the database being saved as a database file, if the program encounters some form of unkown bug down the line the database can still be opened using another SQL browser program
 	\end{itemize}
 	\item Disadvantages
 	\begin{itemize}
 		\item Commandline can be difficult for some people to understand 
 		\item Executing the program may be difficult for some
+		\item SQL is slightly more difficult to programm compared to just using text files or binary files
+	    \item SQL still isn't totally secure as using digital input forms means that it may be susceptable to SQL injection and other security faults.
 	\end{itemize}
 \end{itemize}
 
-GUI Based Application Programmed in Python using the PyQt Library
+GUI Based Application Programmed in Python using the PyQt Library implementing a database programmed and managed in SQL.
 
 \begin{itemize}
 	\item Advantages
@@ -516,24 +539,31 @@ GUI Based Application Programmed in Python using the PyQt Library
 		\item Can be programmed to do anything the client requests
 		\item Easy to use as entirely GUI based so users only need basic computer knowledge
 		\item That program can be made into an executable using cx freeze so its easy to open and doesnt require the install of any additional programs
-		\item Uses a database that will be easily understandable when compared to the previous excel spreadsheets
+		\item Can be programmed to do anything required and easily modified in the future
+		\item Uses relational databases that will be easily understandable as it will be designed to my clients specifications when compared to the previous excel spreadsheets as well as being more secure than a text or binary file as well as being easier to manipulate with the sqlite3 library.
+		\item With the database being saved as a database file, if the program encounters some form of unkown bug down the line the database can still be opened using another SQL browser program
 	\end{itemize}
 	\item Disadvantages
 	\begin{itemize}
 	    \item Not as easy an adjustment as updating the current spreadsheets would be
 	    \item Not as easy to create as a command line based program
+	    \item SQL is slightly more difficult to programm compared to just using text files or binary files
+	    \item SQL still isn't totally secure as using digital input forms means that it may be susceptable to SQL injection and other security faults.
 	\end{itemize}
 \end{itemise}
 		
 
 \subsection{Justification of chosen solution}
 
-My Chosen solution is too use an application with a GUI programmed in python with the library PyQt. This is because of a number of reasons:
+My Chosen solution is too use an application with a GUI programmed in python with the library PyQt implementing a database programmed and managed in SQL. This is because of a number of reasons:
 
 \begin{itemize}
     \item I am familiar with python and PyQt and know how to use them as well as knowing how to use and disect their documentation if I ever get lost
-    \item Python is easy to install and I can easily guide my client and hs staff in open the application
+    \item Python is easy to install and I can easily use it to debug the program on the gyms workstation if needed incase of emergency though the program will be distributed to my client as a executable
     \item If its more accessable to the client I can even make an executable of the program using a program like cx freeze
     \item Programming in python gives me the opportunity to present and demonstrate my knowledge of complex programming features like Object Oriented Programming and recursive programming
     \item Python gives me he flexibility to program the system to my clients exact specification as its a fully featured programming language
+    \item The use of relational databases can be implemented using python and the SQLite3 library meaning it will be easy to store and manipulate the data required using SQL as oppossed to just a text file or a binary file or an Excel spreadsheet
+    \item The use of SQL databases is that it is much more secure than simply saving the data to a text file, or pickling the data to create a binary file, and even more secure than a password protected or encrypted Excel spreadsheet. It also means that in the event that the program encounters an issue that the database can be opened in another SQL Browser, even if the interface wont be as suited to the clients needs as the one I will have programmed in the chosen solution.
+    \item This also means that the database can be presented in any format/design that is desired as long as its possible to program
 \end{itemize}
