@@ -316,6 +316,7 @@ Client/Member Record Viewing/Data Input
         \item Each of these buttons should open up either drop down menus or entirely new windows, depending on which is more user friendly, and display further options within those commands.
         \item The interface for entering new information should be easy to use and clearly labelled for adding each attribute to the specified table.
         \item Their should be an easy/ifficient way to switch and search between all of the tables in the database.
+        \item the .db file made in SQL should be password protected so it can't just be opened in another program without being crredible enough to know the password.
         \item Avoid more novice users accidentally deleteing items by having a secondary password for higher level access.
         \item Store backups of the database online using a system like dropbox or GitHub so that in the event of data corruption there would be recent version to backup to
         \item Storing the latest version of the spreasheet locally also adds an extra layer of security as the most recent version wont be easily accessable exept by people with direct access to the workstation.
@@ -406,9 +407,11 @@ Exercise
 \section{Other Abstractions and Graphs}
 
 \begin{figure}[H]
-    \includegraphics[width=\textwidth]{PrelimDesigns(1).jpg}
-    \caption{Preliminary Gui Mockup Presented to Client} \label{fig: Preliminary Gui Mockup Presented to Client}
+    \includegraphics[width=\textwidth]{GUI_DESIGNS.JPG}
+    \caption{This is the early preliminary designs for the GUI for the proposed system. It shows a main window (with a white box representing where the database will be presented) containing 6 push buttons that open into the 6 respective dialog boxes.} \label{fig: Preliminary Gui Mockup Presented to Client}
 \end{figure}
+
+
 
 \section{Constraints}
 
@@ -422,7 +425,7 @@ The only hardware constraint this laptop proposes is the size and resolution of 
 
 \subsection{Software}
 
-My client has no preference on what software can or cannot be used as long as its easily accessable to him as he isn't the most computer literate person. Its worth noting that although he has no particular requirements for software he isn't willing to learn a new operating system so it will have to run on windows 7. This is not a problem since the proposed system will be developed on a windows os and should be fully compatable.
+My client has no preference on what software can or cannot be used as long as its easily accessable to him as he isn't the most computer literate person. Its worth noting that although he has no particular requirements for software he isn't willing to learn a new operating system so it will have to run on windows 7. This is not a problem since the proposed system will be developed on a windows os and should be fully compatable. The client wants the system to be secure so the databases are going to be programmed in SQL and the system itself is going to have two levels of password protection including password protecting the SQL database.
 
 \subsection{Time}
 
@@ -434,7 +437,7 @@ Although the owner and staff members aren't specifically trained in I.T they are
 
 \subsection{Access restrictions}
 
-Access to the proposed system should only be available to members of sweat gymnasium staff and thus the system may need a password although my client insists that only authorised people will have access to the computer, which is password protected itself so the password may be set to optional incase he wants to deactiate it. Due to the system containing private and confidential data on individuals it will have to comply with the Data Protection Act and appropriate action will be taken to do so though the care of the programs security is mostly in the hands of the staff and owner..
+Access to the proposed system should only be available to members of sweat gymnasium staff and thus the system may need a password although my client insists that only authorised people will have access to the computer, which is password protected itself so the password may be set to optional incase he wants to deactiate it. Due to the system containing private and confidential data on individuals it will have to comply with the Data Protection Act and appropriate action will be taken to do so though the care of the programs security is mostly in the hands of the staff and owner. Although the password for the program may be made optional I insisted that the database be password protected so that people without clearance can't open the database in another browser for malicious or freudulant purposes. If a password is used for the program which it likely will be then a secondary password will be used for the delete option so that no novice users can accidentally delete an item as only higher users who are authorised (like the manager) will have access to that password.
 
 \section{Limitations}
 
@@ -444,7 +447,7 @@ For the less technically inclined who don't have email or don't feel that digita
 
 \subsection{Areas considered for future computerisation}
 
-Although the invoices and printout records of each member could be stored digitally this would be a bad idea for a number of reasons. First of all the printouts could need updating at anytime and if they need a new physical record the gym will need an up to date one instead of an older one they saved from a couple of months before. Another reason for this is that Iv'e been told by the owner that he would prefer to keep hard copies of invoices over digital so that he not only has a physical record of the invoice for accountancy reasons and so he can send one to any of his clients, even the ones with little computer knowledge.
+Although the invoices and printout records of each member could be stored digitally this would be a bad idea for a number of reasons. First of all the printouts could need updating at anytime and if they need a new physical record the gym will need an up to date one instead of an older one they saved from a couple of months before. Another reason for this is that Iv'e been told by the owner that he would prefer to keep hard copies of invoices over digital so that he not only has a physical record of the invoice for accountancy reasons and so he can send one to any of his clients, even the ones with little computer knowledge. The forms also change repeatedly so if they were saved an older version could be printed out instead by accident. This will be considered for future computerisation as it may come in handy if the owner decides he may want digital copies of forms kept if he believes hes going to need to repeatedly print off an unchanged form in the future, or needs a digital record of a table in a previous state. So a fucntion to save a form to a text file or binary file that can be reread by the program to be printed off in the future may be added.  
 
 \section{Solutions}
 
