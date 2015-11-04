@@ -16,15 +16,15 @@ Contact Information: Sweat Gymnasium LLP
 
 \subsection{Client Identification}
 
-My client is an independent gym owner who is struggling to keep track of his members payment details and use of the facilities. He is also my brother in law. He approached me about creating a system for him after I mentioned I needed a client for coursework and he mentioned that he is having issues with clients not paying him since he doesn't have an accurate, reliable system for keeping track of payments. He also has to manage staff members throughout the day and has to manage his business' accounts, which relies a lot on his current system for keeping track of his members payments.  His gym has over a 1000 members which he keeps track of using excel spreadsheets. He made these spreadsheets himself so he has a reputable amount of I.T skills (I go more in depth regarding his and his employees I.T abilities in the Constraints section). 
+My client is an independent gym owner who is struggling to keep track of his members payment details and use of the facilities. He is also my brother in law. He approached me about creating a system for him after I mentioned I needed a client for coursework and he mentioned that he is having issues with clients not paying him since he doesn't have an accurate, reliable system for keeping track of payments. He also has to manage staff members throughout the day and has to manage his business' accounts, which relies a lot on his current system for keeping track of his members payments. His gym has over a 1000 members which he keeps track of using excel spreadsheets. He made these spreadsheets himself so he has a reputable amount of I.T skills (I go more in depth regarding his and his employees I.T abilities in the Constraints section). 
 
 \subsection{Define the current system}
 
-His current system involves using a series of excel spreadsheets to document his clients payment, membership details, personal details and exercise plans. He does this manually by creating new spreadsheets and entering the clients data by hand. His clients give him this data by filling out a membership form and membership agreement and via discussion and another entry form if they need an exercise program made for them. My client uses one spreadsheet to keep a record of all the members of the gym including details like their member ID, their contact information and membership details, and another for their payment information  as well as whether their up to date with these payments. Each member then has their own table which is used to keep track of any exercise routines they may have paid to have planned for them.  
+His current system involves using a series of excel spreadsheets to document his clients payment, membership details, personal details and exercise plans. He does this manually by creating new spreadsheets and entering the clients data by hand. His clients give him this data by filling out a membership form and membership agreement and via discussion and another entry form if they need an exercise program made for them. My client uses one spreadsheet to keep a record of all the members of the gym including details like their member ID, their contact information and membership details, and another for their payment information  as well as whether their up to date with these payments. Each member then has their own table which is used to keep track of any exercise routines they may have paid to have planned for them. When the applying member signs up they get given information regarding the gym including payments details so that the can pay via direct debit. Every month the owner checks his mandates to see who has and hasn't made their payment.   
 
 \subsection{Describe the problems}
 
-This system imposes some limitations. First of all, all the processes have to be dealt with manually through spreadsheets without anything other than lack of human error to point out a mistake or notify if someone isn't up to date with payment. This also isn't secure as any piece of information can be changed at any time and to be sure of everything debit mandates would have to be looked over, but even then some clients may have payed by cash and thus wouldn't be recoverable. Their is also the possibility of a computer error that could delete all the documents as they are not backed up anywhere. His gym also know accommodates over 1000 members meaning that he has a large number of spreadsheets for all his clients as well as having his main spreadsheet being exceptionally large meaning the program can lag, especially since the program isn't running on the greatest available hardware. Another issue is that it can be difficult to sort through and search the spreadsheets to find specific information regarding clients, for example if he needs to find they're contact information, excel doesn't have a tool to easily search for that.
+This system imposes some limitations. First of all, all the processes have to be dealt with manually through spreadsheets without anything other than lack of human error to point out a mistake or notify if someone isn't up to date with payment. This also isn't secure as any piece of information can be changed at any time and to be sure of everything debit mandates would have to be looked over, but even then some clients may have payed by cash and thus wouldn't be recoverable. Their is also the possibility of a computer error that could delete all the documents as they are not backed up anywhere. His gym also now accommodates over 1000 members meaning that he has a large number of spreadsheets for all his clients as well as having his main spreadsheet being exceptionally large meaning the program can lag, especially since the program isn't running on the greatest available hardware. Another issue is that it can be difficult to sort through and search the spreadsheets to find specific information regarding clients, for example if he needs to find they're contact information, excel doesn't have a tool to easily search for that. He also has no easy way to create invoices or just clean organised print outs of any information he needs.
 
 \subsection{Section appendix}
 
@@ -270,7 +270,7 @@ My proposed system uses a database to keep track of all the data that my client 
 
 \subsubsection{Volumetrics}
 
-I have decided on an initial size of 2000 members since the gym is nearing that number of members and will inevitably achieve this amount of clients.  My client has said the amount of clients he gains isn't consistent as people often register in different sized groups. The size of the database can be increased at a later date when needed.  
+I have decided on an initial size of 2000 members since the gym is nearing that number of members and will inevitably achieve this amount of clients.  My client has said the amount of clients he gains isn't consistent as people often register in different sized groups. Although over the past year he has gained 560 new members and roughly 400 members the year before, and the year before that. This means that we can estimate that in about a year and a half the gym will exceed 2000 members. The size of the database can be increased at a later date when needed.  
 
 Each member has 11 - 16 fields of data in total, with each data field taking up 1 KB of data.
 
@@ -294,6 +294,14 @@ The rest of the system should take up a small amount of space that will probably
         \item Clear/easy to understand layout for creating and printing invoices/ member records
         
         \item Clear/easy to understand digital/physical input forms for users to enter data
+        
+        \item Secure system thats password protected so that only appropriate staff members can use the system
+        
+        \item Cerain options like deleting items from the database restricted to only an administrator/ sepearte password that only higher level staff members can access
+        
+        \item Presentable, minimalistic GUI that can be easily understood and interacted with by the users 
+        
+        \item Appropriate Screen outputs for example dialog boxes and the presentation of the database presented in the GUI mockup.
 
     \end{itemize}
 
@@ -308,6 +316,9 @@ Client/Member Record Viewing/Data Input
         \item Each of these buttons should open up either drop down menus or entirely new windows, depending on which is more user friendly, and display further options within those commands.
         \item The interface for entering new information should be easy to use and clearly labelled for adding each attribute to the specified table.
         \item Their should be an easy/ifficient way to switch and search between all of the tables in the database.
+        \item Avoid more novice users accidentally deleteing items by having a secondary password for higher level access.
+        \item Store backups of the database online using a system like dropbox or GitHub so that in the event of data corruption there would be recent version to backup to
+        \item Storing the latest version of the spreasheet locally also adds an extra layer of security as the most recent version wont be easily accessable exept by people with direct access to the workstation.
     \end{itemize}
 
 
@@ -317,6 +328,9 @@ System Outputs
 
         \item Easy to create reports containing all of a specific clients information in an organised manner on as little paper as legibly possible.
         \item Easy to create invoices for members based off of the information stored in the tables.
+        \item Reports should include Invoices, database table printouts, member reports giving details selected from the databases.
+        \item These reports should be printable so that they can be given to members and stored physically
+        
 \end{itemize}
 
 Input Forms
@@ -401,6 +415,8 @@ Exercise
 \subsection{Hardware}
 
 The owner currently uses a Notebook laptop powered by an intel 1st generation i5 processor and 4GB of RAM. He already uses this laptop to run his current system which uses more resources and power than this system will hopefully require, but if not he still has more than enough horse power to run the new system. His use of a laptop is convienient as it means his system is portable so he doesn't need to do any data entry (if required) confined to his office and away from his client if he doesn't want too and it also means he has a battery so in the case of a power outtage he wont lose any data. Though it is worth noting that he may soon be upgrading to a more powerful desktop soon so while this lowers portability, he has more power for the proposed system and he can easily have a battery backup in the form of a UPS(Uninterptable Power Supply).
+
+All members will be running this program off the same workstation so the databases don't need to be primarily stored online and stored locally as the files don't need to be portable. This also adds a level of security.
 
 The only hardware constraint this laptop proposes is the size and resolution of the screen. As it is only 1440p x 900p and 15 inches diagonally this doesn't give him much room to observe over 1300 clients without excessive amounts of scrolling. Fortunately this could be easily solved by either upgrading to a desktop or simply using an external monitor of a higher resolution.
 
