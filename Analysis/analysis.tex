@@ -20,7 +20,7 @@ My client is an independent gym owner who is struggling to keep track of his mem
 
 \subsection{Define the current system}
 
-His current system involves using a series of excel spreadsheets to document his clients payment, membership details, personal details and exercise plans. He does this manually by creating new spreadsheets and entering the clients data by hand. His clients give him this data by filling out a membership form and membership agreement and via discussion and another entry form if they need an exercise program made for them. My client uses one spreadsheet (presented in section: Investigation) to keep a record of all the members of the gym including details like their member ID, their contact information and membership details, and another for their payment information (presented in section: Investigation) as well as whether their up to date with these payments. Each member then has their own table which is used to keep track of any exercise routines they may have asked to have planned for them. When the applying member signs up they get given information regarding the gym including payments details so that the can pay via direct debit. Every month the owner checks his mandates to see who has and hasn't made their payment. When a member of the gym leaves all of their information is kept in case they return to their membership in the future. All of the exercise regimes are dated so that it can be referred back to if the member decides they want to change their regime. He then scans these sheets and saves them digitally and uses another physical sheet to document the new regime. A lot of the time he will immediately scan the sheet as members normally request a copy, plus he finds it useful to have a backup especially when dealing with physical forms. All of these spreadsheets and regime forms are kept on the owners workstation computer at the reception desk. Usually he will send the not print the spreadsheets unless he outsources his accounts to another employee or an accountant and he isn't comfortable supplying them with a full digital, or they just find it easier to deal with a physical version. He doesn't keep any of his clients debit/credit card information except for their sort codes and standing order form (just to reference so they are aware of who paid and how to supply refunds in certain circumstances) as all transactions are performed by the members through either direct debit or cash.   
+His current system involves using a series of excel spreadsheets to document his clients payment, membership details, personal details and exercise plans. He does this manually by creating new spreadsheets and entering the clients data by hand. His clients give him this data by filling out a membership form and membership agreement and via discussion and another entry form if they need an exercise program made for them. My client uses one spreadsheet (presented in section: Investigation) to keep a record of all the members of the gym including details like their member ID, their contact information and membership details, and another for their payment information (presented in section: Investigation) as well as whether their up to date with these payments. Each member then has their own table which is used to keep track of any exercise routines they may have asked to have planned for them. When the applying member signs up they get given information regarding the gym including payments details so that the can pay via direct debit. Every month the owner checks his mandates to see who has and hasn't made their payment. When a member of the gym leaves all of their information is kept in case they return to their membership in the future. All of the exercise regimes are dated so that it can be referred back to if the member decides they want to change their regime. He then scans these sheets and saves them digitally and uses another physical sheet to document the new regime. A lot of the time he will immediately scan the sheet as members normally request a copy, plus he finds it useful to have a backup especially when dealing with physical forms. All of these spreadsheets and regime forms are kept on the owners workstation computer at the reception desk. Usually he will send the not print the spreadsheets unless he outsources his accounts to another employee or an accountant and he isn't comfortable supplying them with a full digital, or they just find it easier to deal with a physical version. He doesn't keep any of his clients debit/credit card information as all transactions are performed by the members through either direct debit, paying by card at the gym or cash.   
 
 \subsection{Describe the problems}
 
@@ -72,8 +72,10 @@ The current system is made of completely manual functions only using computers f
 
 \subsubsection{Data sources and destinations}
 
+The table below presents all the data curently used in the system, where its come from, where its being stored and gives an example of said data.
+
 \begin{figure}[H]
-    \includegraphics[width=\textwidth]{InvestigationTable1.jpg}
+    \includegraphics[width=\textwidth]{InvestigationTable1.JPG}
     \caption{Data Sources and Destinations for the current system} \label{fig:Current Destinations}
 \end{figure}
 
@@ -200,7 +202,7 @@ Flow Charts
 
 \begin{figure}[H]
     \includegraphics[width=\textwidth]{StandingOrderForm,jpeg.jpg}
-    \caption{This is the Standing Order Form. This is printed and handed to the user along with the membership form and is used mainly for details regarding the payment spreadsheet as well as getting the members bank account number and sort code for payments.} \label{fig:Standing Order Form }
+    \caption{This is the Standing Order Form. This is printed and handed to the user along with the membership form and is for the member to fill in and hand to their bank so they make the correct payment. Some of this form can be filled in with assistance from a member of staff. For example their membership number.} \label{fig:Standing Order Form }
 \end{figure}
 
 \begin{figure}[H]
@@ -389,7 +391,7 @@ Input Forms
 \subsection{ER Diagram}
 
 \begin{figure}[H]
-    \includegraphics[width=\textwidth]{-ERDiagram.jpg}
+    \includegraphics[width=\textwidth]{-ERDiagram.JPG}
     \caption{ER Diagram} \label{fig: ER Diagram}
 \end{figure}
 
@@ -400,7 +402,7 @@ Membership Details(\textbf{\underline{Membership No.}}, Last Name, First Name, A
 
 Payment Details(\textbf{\underline{Membership No.}},Date of Payment, How Much, Paid)
 
-Regime(\textbf{\underline{Membership No.}},ExerciseID,)
+Regime(\textbf{\underline{Membership No.}},ExerciseID,Specific Description, Start Date, End Date)
 
 Exercise(\textbf{\underline{ExerciseID}}, Name, Description)
 
