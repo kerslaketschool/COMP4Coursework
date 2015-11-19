@@ -1,12 +1,14 @@
 #Sweat Gymnasium Datbase Management System 2000
 
 import sys
+import webbrowser
 
 from gym_open_dialog_class import *
 from gym_delete_dialog_class import *
 from gym_print_dialog_class import *
 from gym_search_dialog_class import *
 from gym_edit_dialog_class import *
+from gym_add_dialog_class import *
 
 from PyQt4.QtCore import *
 from PyQt4.QtGui import *
@@ -66,6 +68,8 @@ class AppWindow(QMainWindow):
         self.print_push_button.clicked.connect(self.print_stuff)
         self.search_push_button.clicked.connect(self.search)
         self.edit_push_button.clicked.connect(self.edit)
+        self.add_push_button.clicked.connect(self.add)
+        self.about.triggered.connect(self.hayley)
 
 
     def open_file(self):
@@ -87,8 +91,13 @@ class AppWindow(QMainWindow):
     def edit(self):
         edit_dialog = EditDialog()
         edit_dialog.exec_()
-        
-        
+
+    def add(self):
+        add_dialog = AddDialog()
+        add_dialog.exec_()
+
+    def hayley(self):
+        webbrowser.open('https://youtu.be/hJCWrBdDd88?t=4')
 
 def main():
     gym_program = QApplication(sys.argv)
