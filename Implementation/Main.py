@@ -1,4 +1,4 @@
-#Sweat Gymnasium Datbase Management System 2000
+#Sweat Gymnasium Datbase Management System 9001
 
 import sys
 import webbrowser
@@ -35,6 +35,11 @@ class AppWindow(QMainWindow):
         self.help_menu = self.toolBar.addMenu("Help")
         self.about = self.help_menu.addAction("About Gym Database Management System 9001")
         self.open_shortcut = self.file_menu.addAction("Open")
+        self.add_shortcut = self.file_menu.addAction("Add")
+        self.edit_shortcut = self.file_menu.addAction("Edit")
+        self.delete_shortcut = self.file_menu.addAction("Delete")
+        self.search_shortcut = self.file_menu.addAction("Search")
+        self.print_shortcut = self.file_menu.addAction("Print")
 
         self.pixmap = QPixmap("toby+dave.png")
         self.bigD = QLabel(self)
@@ -70,6 +75,12 @@ class AppWindow(QMainWindow):
         self.edit_push_button.clicked.connect(self.edit)
         self.add_push_button.clicked.connect(self.add)
         self.about.triggered.connect(self.hayley)
+        self.open_shortcut.triggered.connect(self.open_file)
+        self.add_shortcut.triggered.connect(self.add)
+        self.edit_shortcut.triggered.connect(self.edit)
+        self.delete_shortcut.triggered.connect(self.delete)
+        self.search_shortcut.triggered.connect(self.search)
+        self.print_shortcut.triggered.connect(self.print_stuff)
 
 
     def open_file(self):
@@ -83,20 +94,24 @@ class AppWindow(QMainWindow):
     def print_stuff(self):
         print_dialog = PrintDialog()
         print_dialog.exec_()
+        
 
     def search(self):
         search_dialog = SearchDialog()
         search_dialog.exec_()
 
     def edit(self):
-        edit_dialog = EditDialog()
+        edit_dialog = EditDialog(17)
         edit_dialog.exec_()
 
     def add(self):
-        add_dialog = AddDialog()
+        add_dialog = AddDialog(12)
         add_dialog.exec_()
 
     def hayley(self):
+        webbrowser.open('https://youtu.be/hJCWrBdDd88?t=4')
+        webbrowser.open('https://youtu.be/hJCWrBdDd88?t=4')
+        webbrowser.open('https://youtu.be/hJCWrBdDd88?t=4')
         webbrowser.open('https://youtu.be/hJCWrBdDd88?t=4')
 
 def main():
