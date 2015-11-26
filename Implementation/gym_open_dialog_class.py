@@ -23,7 +23,11 @@ class OpenDialog(QDialog):
 		self.setWindowIcon(QIcon("Hugobells.png"))
 
 		#connections
+		self.open_push_button.clicked.connect(self.open_file)
 		self.close_push_button.clicked.connect(self.close)
-		"""open button to be added"""
+	
+	def open_file(self):
+		path = QFileDialog.getOpenFileName(caption="Open Database",filter = "Database file (*.db *.dat)")
+		
 
 		
