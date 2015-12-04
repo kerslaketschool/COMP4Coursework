@@ -23,5 +23,5 @@ class PasswordDialog(QDialog):
 		self.enterButton.clicked.connect(self.close)
 	
 	def close_funk(self):
-		return self.password_lineEdit.text()
+                return self.password_lineEdit.text()
 		
