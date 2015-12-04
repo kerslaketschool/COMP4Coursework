@@ -10,6 +10,10 @@ from gym_search_dialog_class import *
 from gym_edit_dialog_class import *
 from gym_add_dialog_class import *
 from gym_about_dialog_class import *
+from gym_password_dialog_class import *
+
+
+
 from data_browser import *
 
 from PyQt4.QtCore import *
@@ -24,7 +28,7 @@ class AppWindow(QMainWindow):
         self.setWindowTitle("Gym Database Management System 9001")
 
         #toolbars
-        self.setWindowIcon(QIcon("adam.jpg"))
+        self.setWindowIcon(QIcon("Logo.png"))
         self.open_push_button = QPushButton("Open")
         self.add_push_button = QPushButton("Add")
         self.edit_push_button = QPushButton("Edit")
@@ -33,10 +37,11 @@ class AppWindow(QMainWindow):
         self.print_push_button = QPushButton("Print")
 
         self.tab_bar = QTabWidget()
-
-        self.tab_1 = BrowseDataWidget()
-
-        self.tab_bar.addTab(self.tab_1,"Tab1")
+        
+        self.tabs = {}
+        for count in range(10):
+            self.tabs["tab_{0}".format(count + 1)] = BrowseDataWidget()
+            self.tab_bar.addTab(self.tabs["tab_{0}".format(count + 1)],"Tab{0}".format(count + 1))
 
         self.toolBar = QMenuBar()
         self.file_menu = self.toolBar.addMenu("File")
@@ -48,6 +53,7 @@ class AppWindow(QMainWindow):
         self.delete_shortcut = self.file_menu.addAction("Delete")
         self.search_shortcut = self.file_menu.addAction("Search")
         self.print_shortcut = self.file_menu.addAction("Print")
+
 
         #layout
         self.layout1 = QHBoxLayout()
@@ -95,6 +101,7 @@ class AppWindow(QMainWindow):
         path = QFileDialog.getOpenFileName(caption="Open Database",filter = "Database file (*.db *.dat)")
 
     def delete(self):
+        self.password()
         delete_dialog = DeleteDialog()
         delete_dialog.exec_()
 
@@ -118,8 +125,17 @@ class AppWindow(QMainWindow):
         QSound.play("Westenraaaaaa.wav")
         about_dialog = AboutDialog()
         about_dialog.exec_()
+
+    def password(self):
+        passWord = ""
+        while passWord != "ryansucks":
+            password_dialog = PasswordDialog()
+            password_dialog.exec_()
+            passWord = PasswordDialog.close_funk
+            print(passWord)
+
         
-def main():
+def main():   
     gym_program = QApplication(sys.argv)
     gym_window = AppWindow()
     gym_window.resize(700,600)

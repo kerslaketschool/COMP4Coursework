@@ -11,5 +11,6 @@ class BrowseDataWidget(QWidget):
 		self.table_view = QTableView()
 		
 		self.layout.addWidget(self.table_view)
+		self.setLayout(self.layout)
 		
 		
