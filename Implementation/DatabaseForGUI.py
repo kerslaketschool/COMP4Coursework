@@ -30,4 +30,3 @@ class Database:
       teachers = cursor.fetchall()
       return teachers
       
-g_database = Database("teacher_database.db")

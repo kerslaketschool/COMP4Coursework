@@ -1,5 +1,6 @@
 from PyQt4.QtGui import *
 from PyQt4.QtSql import *
+from sqlite3 import *
 
 class BrowseDataWidget(QWidget):
 	"""A widget for displaying Database data"""
@@ -9,21 +10,21 @@ class BrowseDataWidget(QWidget):
 		self.layout = QVBoxLayout()
 		
 		self.table_view = QTableView()
-		self.PopulateTableView()
+		self.PopulateTable()
 		
 		self.layout.addWidget(self.table_view)
+		
 		self.setLayout(self.layout)
 
-
-        def PopulateTableView(self):
-            teachers = g_database.GetAllTeachers()
-            model = QStandardItemModel()
-            row = 0
-            for teacher in teachers:
-              for column in range(2):
-                item = QStandardItem("{}".format(teacher[column]))
-                model.setItem(row, column, item)
-                row+=1
-        
-            self._tableview.setModel(model)
+		
+	def PopulateTable(self):
+		model = QStandardItemModel()
+		model.setItem(0, 0, QStandardItem("Gay"))
+		model.setItem(0, 1, QStandardItem("Butts"))
+		model.setItem(0, 2, QStandardItem("Chums"))
+		model.setItem(1, 0, QStandardItem("sup"))
+		model.setItem(1, 1, QStandardItem("clunge"))
+		model.setItem(1, 2, QStandardItem("plunge"))
+		
+		self.table_view.setModel(model)
 		
