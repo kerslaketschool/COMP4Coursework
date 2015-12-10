@@ -128,17 +128,17 @@ class AppWindow(QMainWindow):
 
     def password(self):
         passWord = ""
-        while passWord != "ryansucks":
+        while passWord != "ryansucksduck":
             password_dialog = PasswordDialog()
             password_dialog.exec_()
-            passWord = PasswordDialog.close_funk
-            print(passWord)
+            passWord = password_dialog.close_funk()
 
         
 def main():   
     gym_program = QApplication(sys.argv)
     gym_window = AppWindow()
     gym_window.resize(700,600)
+    password_dialog = gym_window.password()
     gym_window.show()
     gym_window.raise_()
     gym_program.exec_()
