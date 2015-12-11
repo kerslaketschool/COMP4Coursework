@@ -24,7 +24,7 @@ His current system involves using a series of excel spreadsheets to document his
 
 \subsection{Describe the problems}
 
-This system imposes some limitations. First of all, all the processes have to be dealt with manually meaing that all the information has to be entered into excel spreadsheets and not in an easier manner like through a digital form which would organise the data efficiently and atomatically instead of the staff having to do it themselves. This also isn't secure as any piece of information can be changed at any time by anyone who has managed to access the staff workstation and to be sure of everything debit mandates would have to be looked over, but even then some clients may have payed by cash and thus wouldn't be recoverable. Their is also the possibility of a computer error that could delete all the documents as they are not backed up anywhere. His gym also now accommodates over 1000 members meaning that he has a large number of spreadsheets for all his clients as well as having his main spreadsheet being exceptionally large meaning the program can lag, especially since the program isn't running on the greatest available hardware. Another issue is that it can be difficult to sort through and search the spreadsheets to find specific information regarding clients, for example if he needs to find they're contact information, excel doesn't have a tool to easily search for that. He also has no easy way to create invoices or just clean organised print outs of any information he needs.
+This system imposes some limitations. First of all, all the processes have to be dealt with manually meaing that all the information has to be entered into excel spreadsheets and not in an easier manner like through a digital form which would organise the data efficiently and atomatically instead of the staff having to do it themselves. These spreadsheets are used to log any payments made by a client, whether its cash/card or by direct debit, as well as all the client information that needs to be stored. A password might need to be included in the new system as the current system also isn't secure as any piece of information can be changed at any time by anyone who has managed to access the staff workstation and to be sure of everything debit mandates would have to be looked over, but even then some clients may have payed by cash and thus wouldn't be recoverable. Their is also the possibility of a computer error that could delete all the documents as they are not backed up anywhere. His gym also now accommodates over 1000 members meaning that he has a large number of spreadsheets for all his clients as well as having his main spreadsheet being exceptionally large meaning the program can lag, especially since the program isn't running on the greatest available hardware. Another issue is that it can be difficult to sort through and search the spreadsheets to find specific information regarding clients, for example if he needs to find they're contact information, excel doesn't have a tool to easily search for that. He also has no easy way to create invoices or just clean organised print outs of any information he needs.
 
 \subsection{Section appendix}
 
@@ -81,7 +81,7 @@ The table below presents all the data curently used in the system, where its com
 
 \subsubsection{Algorithms}
 
-Hierarchy Charts
+Structure Tables
 
 Gym Sign Up Process
 \begin{python}
@@ -177,19 +177,24 @@ Flow Charts
 
 \begin{figure}[H]
     \includegraphics[width=\textwidth]{GymAlgorithm.jpg}
-    \caption{Algorithm for the gym sign up process} \label{fig:Algorithm for the gym sign up process}
+    \caption{Algorithm for the gym sign up process. The form details the process of an applying member giving a staff member their details, the staff member entering them into the spreadsheets and then going through all the extra processes that are required if the applying member wants an exercise regime.} \label{fig:Algorithm for the gym sign up process. }
 \end{figure}
 
 \begin{figure}[H]
-    \includegraphics[width=\textwidth]{PaymentAlgorithm.jpg}
-    \caption{Algorithm for the payment process} \label{fig:Algorithm for the payment process}
+    \includegraphics[width=\textwidth]{CurrentPayment.JPG}
+    \caption{Algorithm for the payment process. This details the process the member and staff members go through each month when the member pays either through cash/card or a monthly standing order, and how they deal with people who refuse to pay. } \label{fig:Algorithm for the payment process}
+\end{figure}
+
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{NewRegimeAlgorithm.JPG}
+    \caption{Algorithm for the process of creating a new exercise regime. This details how the gym member interviews with a staff member to create a new regime based on exercises they deem appropriate. } \label{fig:Algorithm for the regime change}
 \end{figure}
 
 \subsubsection{Data flow diagram}
 
 \begin{figure}[H]
     \includegraphics[width=\textwidth]{DFD-Current.JPG}
-    \caption{Data Flow Diagram For The Current System} \label{fig:Data Flow Diagram For The Current System}
+    \caption{Data Flow Diagram For The Current System. These diagrams show where all the data in the current system comes from, where it goes and the process it goes through to get there.} \label{fig:Data Flow Diagram For The Current System}
 \end{figure}
 
 
@@ -291,24 +296,29 @@ My proposed system uses a database to keep track of all the data that my client 
 \end{figure}
 
 \begin{figure}[H]
-    \includegraphics[width=\textwidth]{dfd_2.JPG}
+    \includegraphics[width=\textwidth]{moreProposedDfds.JPG}
     \caption{Data Flow Diagram} \label{fig: Data Flow Diagram }
+\end{figure}
+
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{dfd_2.JPG}
+    \caption{Data Flow Diagram. These diagrams show where all the data in the proposed system comes from, where it goes and the process it goes through to get there.} \label{fig: Data Flow Diagram }
 \end{figure}
 
 \subsubsection{Data dictionary}
 
 \begin{figure}[H]
-    \includegraphics[width=\textwidth]{DataDictionaryProposed.JPG}
+    \includegraphics[width=\textwidth]{datadict1.JPG}
     \caption{Data Dictionary} \label{fig: Data Destinations and Sources }
 \end{figure}
 
 \begin{figure}[H]
-    \includegraphics[width=\textwidth]{DataDictionaryProposed2.JPG}
+    \includegraphics[width=\textwidth]{datadict2.JPG}
     \caption{Data Dictionary 2} \label{fig: Data Destinations and Sources 2 }
 \end{figure}
 
 \begin{figure}[H]
-    \includegraphics[width=\textwidth]{New_dictionary3.JPG}
+    \includegraphics[width=\textwidth]{datadict3.JPG}
     \caption{Data Dictionary 3} \label{fig: Data Destinations and Sources 2 }
 \end{figure}
 
@@ -321,9 +331,13 @@ Each member has 11 - 16 fields of data in total, with each data field taking up 
 16 * 1KB * 2000 = 32000 KB
 32000 / 1024 = 31.25 MB
 
-The rest of the system should take up a small amount of space that will probably take up about 3MB.
+There is also the exercise tables and regime tables which will take up roughly 10,000 KB of data assuming each member will have an average of 10 exercises each in their regime, each exercise taking up 1KB of data. The exercise table would then likely come up to 300 KB of data as currently the owner estimates that he currently offers 300 different variations of exercises.
 
-31.25 MB + 3MB = 34.25 MB
+10,300 / 1024 = 10.05 MB
+
+The actual program should then take up a small amount of space that will probably take up about 3MB.
+
+31.25 MB + 10.05 + 3MB = 44.30 MB
 
 \section{Objectives}
 
@@ -360,7 +374,6 @@ Client/Member Record Viewing/Data Input
         \item Each of these buttons should open up either drop down menus or entirely new windows, depending on which is more user friendly, and display further options within those commands.
         \item The interface for entering new information should be easy to use and clearly labelled for adding each attribute to the specified table.
         \item Their should be an easy/ifficient way to switch and search between all of the tables in the database.
-        \item the .db file made in SQL should be password protected so it can't just be opened in another program without being crredible enough to know the password.
         \item Avoid more novice users accidentally deleteing items by having a secondary password for higher level access.
         \item Store backups of the database online using a system like dropbox or GitHub so that in the event of data corruption there would be recent version to backup to
         \item Storing the latest version of the spreasheet locally also adds an extra layer of security as the most recent version wont be easily accessable exept by people with direct access to the workstation.
@@ -382,8 +395,8 @@ Input Forms
 
     \begin{itemize}  
 
-        \item Easy to fill out digital input forms, maybe made in HTML that can be distributed by email or through the gyms website that the program could automatically search for a recieve when being opened.
-        \item Printable versions off these forms that can be created to be filled out by hand by less technically inclined clients that can then have their information manually entered into the system by a member of staff.
+        \item Easy to fill out digital input forms for entering new data into the database tables instead of a more complicated sql query based system.
+        \item Printable versions off these forms that can be created to be filled out by hand by a client that can then have their information manually entered into the system by a member of staff.
 
     \end{itemize}
 
@@ -395,7 +408,6 @@ Input Forms
         \item Each of these buttons should open up either drop down menus or entirely new windows, depending on which is more user friendly, and display further options within those commands.
         \item The interface for entering new information should be easy to use and clearly labelled for adding each attribute to the specified table.
         \item Their should be an easy/ifficient way to switch and search between all of the tables in the database.
-        \item the .db file made in SQL should be password protected so it can't just be opened in another program without being crredible enough to know the password.
         \item Avoid more novice users accidentally deleteing items by having a secondary password for higher level access.
         \item Store backups of the database online using a system like dropbox or GitHub so that in the event of data corruption there would be recent version to backup to
         \item Storing the latest version of the spreasheet locally also adds an extra layer of security as the most recent version wont be easily accessable exept by people with direct access to the workstation.
@@ -411,7 +423,7 @@ Input Forms
 \subsection{Other Objectives}
 
 \begin{itemize}
-     \item Easy to fill out digital input forms, maybe made in HTML that can be distributed by email or through the gyms website that the program could automatically search for a recieve when being opened.
+        \item Easy to fill out digital input forms for entering new data into the database tables instead of a more complicated sql query based system.
         \item Printable versions off these forms that can be created to be filled out by hand by less technically inclined clients that can then have their information manually entered into the system by a member of staff.
         
 \end{itemize}
@@ -452,14 +464,14 @@ Exercise
 \subsection{Relationship diagrams}
 
 \begin{figure}[H]
-    \includegraphics[width=\textwidth]{RelationshipDiagram.jpg}
+    \includegraphics[width=\textwidth]{RelationshipDiagram1.jpg}
     \caption{Relationship Diagram} \label{fig: Relationship Diagram}
 \end{figure}
 
 \subsection{Class definitions}
 
 \begin{figure}[H]
-    \includegraphics[width=\textwidth]{ClassDefinitions.JPG}
+    \includegraphics[width=\textwidth]{ClassDefinitions.png}
     \caption{Definitions} \label{fig: Definitions}
 \end{figure}
 
@@ -484,7 +496,7 @@ The only hardware constraint this laptop proposes is the size and resolution of 
 
 \subsection{Software}
 
-My client has no preference on what software can or cannot be used as long as its easily accessable to him as he isn't the most computer literate person. Its worth noting that although he has no particular requirements for software he isn't willing to learn a new operating system so it will have to run on windows 7. This is not a problem since the proposed system will be developed on a windows os and should be fully compatable. The client wants the system to be secure so the databases are going to be programmed in SQL and the system itself is going to have two levels of password protection including password protecting the SQL database.
+My client has no preference on what software can or cannot be used as long as its easily accessable to him as he isn't the most computer literate person. Its worth noting that although he has no particular requirements for software he isn't willing to learn a new operating system so it will have to run on windows 7. This is not a problem since the proposed system will be developed on a windows os and should be fully compatable. The client wants the system to be ifficient so the databases are going to be programmed in SQL and the system itself is going to have two levels of password protection so that the data stays secure.
 
 \subsection{Time}
 
