@@ -89,13 +89,48 @@
 \section{User Interface Designs}
 
 \begin{figure}[H]
-    \includegraphics[width=\textwidth]{GUI_DESIGNS.JPG}
-    \caption{First Section of GUI} \label{fig:First Section of GUI}
+    \includegraphics[width=\textwidth]{Gui_1.JPG}
+    \caption{GUI Design} \label{fig:GUI Designs}
 \end{figure}
 
 \begin{figure}[H]
-    \includegraphics[width=\textwidth]{GUI_DESIGNS_2.jpg}
-    \caption{Second Section of GUI} \label{fig:Second Section of GUI}
+    \includegraphics[width=\textwidth]{Gui_2.JPG}
+    \caption{GUI Design} \label{fig:GUI Designs}
+\end{figure}
+
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{Gui_3.JPG}
+    \caption{GUI Design} \label{fig:GUI Designs}
+\end{figure}
+
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{Gui_4.JPG}
+    \caption{GUI Design} \label{fig:GUI Designs}
+\end{figure}
+
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{Gui_5.JPG}
+    \caption{GUI Design} \label{fig:GUI Designs}
+\end{figure}
+
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{Gui_6.JPG}
+    \caption{GUI Design} \label{fig:GUI Designs}
+\end{figure}
+
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{Gui_7.JPG}
+    \caption{GUI Design} \label{fig:GUI Designs}
+\end{figure}
+
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{Gui_8.JPG}
+    \caption{GUI Design} \label{fig:GUI Designs}
+\end{figure}
+
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{Gui_9.JPG}
+    \caption{GUI Design} \label{fig:GUI Designs}
 \end{figure}
 
 \section{Hardware Specification}
@@ -134,9 +169,32 @@ databases will be stored locally. This wont be a problem as the laptop has a 500
 
 \subsection{Algorithms in pseudo-code for each data transformation process}
 
+\begin{python}
+
+START
+
+Function searchDatabase(database, searchTerm)
+    
+
+
+END
+
+\end{python}
+
+
 \subsection{Object Diagrams}
 
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{RelationshipDiagram1.jpg}
+    \caption{Relationship Diagram} \label{fig: Relationship Diagram}
+\end{figure}
+
 \subsection{Class Definitions}
+
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{NewClassDefs.JPG}
+    \caption{Class Definitions} \label{fig:Class Definitions}
+\end{figure}
 
 \section{Prototyping}
 
@@ -212,6 +270,21 @@ Output to Database
 
 \subsection{Data Dictionary}
 
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{datadict1.JPG}
+    \caption{Data Dictionary} \label{fig: Data Destinations and Sources }
+\end{figure}
+
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{NewDict2.JPG}
+    \caption{Data Dictionary 2} \label{fig: Data Destinations and Sources 2 }
+\end{figure}
+
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{NewDict3.JPG}
+    \caption{Data Dictionary 3} \label{fig: Data Destinations and Sources 2 }
+\end{figure}
+
 \subsection{Identification of appropriate storage media}
 
 The system only needs to be accessed by the one workstation in my clients gym meaning that the database files can be stored locally as he won't need to access the files on any other system. Although in saying that the files will be backed up in the gym owners dropbox account so that if the system the databases are stored on breaks then the most recent version of the files will be retrievable and then the files can be accessed on a different system in case of an emergency, adding a certain level of security. 
@@ -222,7 +295,21 @@ The system only needs to be accessed by the one workstation in my clients gym me
 
 \subsubsection{ER Diagrams}
 
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{NewDict3.JPG}
+    \caption{ER Diagram} \label{fig: ER Diagram}
+\end{figure}
+
 \subsubsection{Entity Descriptions}
+
+Membership Details(\textbf{\underline{Membership No.}}, Last Name, First Name, Address, Telephone No., Type Of Membership, Date of Induction, When Joined, How Paid,amount, registration fee, Registration Date, Payment Type, Comments)
+
+Payment Details(\textbf{\underline{Membership No.}},\textbf{\underline{Date of Payment}}, How Much, Paid)
+
+Regime(\textbf{\underline{Membership No.}},\textbf{\underline{ExerciseID}},Specific Description, \textbf{\underline{Start Date}}, End Date)
+
+Exercise(\textbf{\underline{ExerciseID}}, Name, Description)
+
 
 \subsubsection{1NF to 3NF}
 
