@@ -9,6 +9,7 @@
 	\begin {itemize}
 		\item Database View Interface
 		\begin {itemize}
+		    \item The main window for accessing the entire system. It is designed so that all the dialog boxes and other windows can be opened from wihin it and gives a main, tabbed layout for the tables.
 			\item Presented as a database window with 6 push buttons that open dialog boxes for different functions
 			\item the 6 push buttons are labelled:
 			\begin {itemize}
@@ -22,26 +23,23 @@
 		\item Each table in the database is displayed in a different tab
 		\item Main window displays database in a box above function buttons
 		\item Has a menu bar at the top that provides shortcuts to the functions and an about section with a help section that contains   a user manual
-	\item Open Interface
-	\begin {itemize}
-		\item Two push buttons - open file and close
-		\item 1st button opens the file browser to chose a database to open
-		\item 2nd button closes the dialog button
-	\end {itemize}
 	\item Add Interface
 	\begin {itemize}
+	    \item Dialog box that contains forms that allow the user to enter data specific to the table they want to add an item to 
 		\item Drop down menu to select table
 		\item Fields with editable text boxes/line edits to enter attributes
 		\item confirm button
 	\end {itemize}
 	\item Edit Interface
     \begin {itemize}
+	    \item Dialog box that contains forms that allow the user to edit data specific to the table they want to add an item 
 		\item Drop down menu to select table
 		\item Fields with editable text boxes/line edits to enter attributes
 		\item confirm button
 	\end {itemize}
 	\item Delete Interface
 	\begin {itemize}
+	    \item Dialog box allowing the user to delete a specific item from any of the tables
 		\item Select table drop down menu
 		\item Select item drop down menu
 		\item Delete button
@@ -50,10 +48,23 @@
 	\end {itemize}
 	\item Search Interface
 	\begin {itemize}
+	    \item Dialog box allowing the user to search through any or all of the tables to find a specific search term/query
 		\item Select table drop down menu
 		\item Search term QLineEdit
 		\item Search push button
-	\end {itemize}	
+	\end {itemize}
+	\item Print Interface
+	\begin{itemize}
+	    \item Dialog box allowing the user to select a type of form to print out based on selected information like a list of members, an invoice, or a regime.
+	    \item 3 Combo boxes allowing the user to select the type of form, the table they want the information from, and the information.
+	    \item A push button allowing the user to confirm they want to print the selected details.
+	\end {itemize}
+	\item Password Interface
+	\begin {itemize}
+	    \item Dialog box that presents the user an outlet for entering the password for the system
+	    \item Enter password lineEdit allowing the user to enter their password
+	    \item Enter password push Button allowing the user to confirm the password they've entered
+	\end {itemize}
 	\end {itemize}
 	\end {itemize}
 \end {itemize}
@@ -147,7 +158,7 @@ that he may soon be upgrading to a more powerful desktop soon so while this
 lowers portability, he has more power for the proposed system and he can easily
 have a battery backup in the form of a UPS(Uninterptable Power Supply).
 All members will be running this program off the same workstation so the
-databases will be stored locally. This wont be a problem as the laptop has a 500 gb hard drive that wont be filled up too quickly and has lots of room for databases and the program. The program will be ouput through a display (like the one used in the laptop) and the program will be operated and have data inputed using mouse/trackpad and keyboard (also contained within my clients laptop). 
+databases will be stored locally. This wont be a problem as the laptop has a 500 gb hard drive that wont be filled up too quickly and has lots of room for databases and the program. The program will be ouput through a display with a resolution of at least 600 * 800 (like the one used in the laptop) to accomodate the amount of screen real estate the program will require and the program will be operated and have data inputed using mouse/trackpad and keyboard (also contained within my clients laptop). The system will not use any additional peripherals. The system will also need to run on a windows os (windows 7, 8, 8.1, or 10) as thats what its been developed on and intended to run on, though it may also be compatable with MacOS and many Linux distributions as python is fairly portable and compatable with all of those languages. Though its worth noting that the program will only be compiled to work on a windows pc as thats the operating system used by my client.
 
 
 
@@ -173,9 +184,11 @@ databases will be stored locally. This wont be a problem as the laptop has a 500
 
 START
 
-Function searchDatabase(database, searchTerm)
-    
-
+Function searchDatabase(table, info, searchTerm, database)
+    currentDatabase = database
+    connect database as db
+    cursor.execute <--- """select from '{0}' where '{1}' = ‘{2}’ """.format(table, info, SearchItem)
+    results <-- cursor.fetchall
 
 END
 
@@ -197,6 +210,22 @@ END
 \end{figure}
 
 \section{Prototyping}
+
+For the prototype I created various functional GUI's to test how my program will look, feel and operate for my client and serveral commandline python functions to test some of the functionality. This allowed me to make sure the program was coming along to my clients expectations.
+
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{PrototypeGui1.JPG}
+    \caption{Prototype Main Gui Window} \label{fig:Prototype Main Gui Windows}
+\end{figure}
+
+This shows the window for my main Gui. The blank white space is where the database will go once the program is complete, with each tab representing a different table. My client used this and seemed pleased with the potential of the programm but felt like he needed some functionality to get an idea of how the program will work.
+
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{PrototypeGui2.JPG}
+    \caption{Prototype Search Commandline Window} \label{fig:Prototype Search Commandline Window}
+\end{figure}
+
+This shows a commandline interface for a search function I made to show the potential of the functionality of the program for my client. He seemed impressed by the potential problems this search function could solve for when he needs to find any specific information quickly like how in this example he could find out everyone who had outstanding payments for membership.
 
 \section{Definition of Data Requirements}
 
@@ -296,7 +325,7 @@ The system only needs to be accessed by the one workstation in my clients gym me
 \subsubsection{ER Diagrams}
 
 \begin{figure}[H]
-    \includegraphics[width=\textwidth]{NewDict3.JPG}
+    \includegraphics[width=\textwidth]{RelationshipDiagram1.jpg}
     \caption{ER Diagram} \label{fig: ER Diagram}
 \end{figure}
 
@@ -335,6 +364,16 @@ Exercise(\textbf{\underline{ExerciseID}}, Name, Description)
 
 \subsection{SQL Queries}
 
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{Queries1.JPG}
+    \caption{SQL Queries} \label{fig:SQL Queries}
+\end{figure}
+
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{Queries2.JPG}
+    \caption{SQL Queries} \label{fig:SQL Queries}
+\end{figure}
+
 \section{Security and Integrity of the System and Data}
 
 \subsection{Security and Integrity of Data}
@@ -344,6 +383,21 @@ The system will have data entered through combo boxes/drop down menus where poss
 The system will be protected behind a password that is only known by certain users/members of staff at the gym and a secondary password will be required to use certain functions like the function to delete any of the data or edit anything important.
 
 \section{Validation}
+
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{Validation1.JPG}
+    \caption{Validation} \label{fig:Valdation}
+\end{figure}
+
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{Validation2.JPG}
+    \caption{Validation} \label{fig:Valdation}
+\end{figure}
+
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{Validation3.JPG}
+    \caption{Validation} \label{fig:Valdation}
+\end{figure}
 
 \section{Testing}
 
