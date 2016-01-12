@@ -190,12 +190,35 @@ Function FetchTotalForInvoice (database, person)
     data <--- cursor.execute
     total <-- 0
     for amount in data:
-        total += data
+        total <--- total + data
     return total
+END
+
+START
+
+Function GenerateMemberID(database)
+    sql connect database as db
+    db.cursor <--- """Select Count (Distinct MemberID) From Members"""
+    HighestPlace <--- cursor.execute
+    MemberID <---- HighestPlace +1
+    return MemberID
+    
+END
+
+START
+
+Function GenerateExerciseID(database)
+    sql connect database as db
+    db.cursor <--- """Select Count (Distinct ExerciseID) From Exercises"""
+    HighestPlace <--- cursor.execute
+    ExerciseID <---- HighestPlace +1
+    return ExerciseID
+    
 END
 
 \end{python}
 
+All the other instances of data transformation in my program are accurately represented in the SQL Queries section of this coursework as my other data transformation processes are all done primarily in SQL and don't require any pseudocode.
 
 \subsection{Object Diagrams}
 
@@ -367,12 +390,17 @@ Exercise(\textbf{\underline{ExerciseID}}, Name, Description)
 \subsection{SQL Queries}
 
 \begin{figure}[H]
-    \includegraphics[width=\textwidth]{Queries1.JPG}
+    \includegraphics[width=\textwidth]{Queries1.PNG}
     \caption{SQL Queries} \label{fig:SQL Queries}
 \end{figure}
 
 \begin{figure}[H]
-    \includegraphics[width=\textwidth]{Queries2.JPG}
+    \includegraphics[width=\textwidth]{Queries2.PNG}
+    \caption{SQL Queries} \label{fig:SQL Queries}
+\end{figure}
+
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{Queries3.PNG}
     \caption{SQL Queries} \label{fig:SQL Queries}
 \end{figure}
 
