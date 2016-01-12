@@ -184,12 +184,14 @@ databases will be stored locally. This wont be a problem as the laptop has a 500
 
 START
 
-Function searchDatabase(table, info, searchTerm, database)
-    currentDatabase = database
-    connect database as db
-    cursor.execute <--- """select from '{0}' where '{1}' = ‘{2}’ """.format(table, info, SearchItem)
-    results <-- cursor.fetchall
-
+Function FetchTotalForInvoice (database, person)
+    sql connect database as db
+    db.cursor <--- """Select How Much Where MemberID = "105" Payments"""
+    data <--- cursor.execute
+    total <-- 0
+    for amount in data:
+        total += data
+    return total
 END
 
 \end{python}
